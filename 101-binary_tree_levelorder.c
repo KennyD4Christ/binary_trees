@@ -1,5 +1,6 @@
 #include "binary_trees.h"
 #include "queue.h"
+#include "queue.c"
 
 /**
  *  * binary_tree_levelorder - Performs level-order traversal of a binary tree
