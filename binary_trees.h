@@ -119,6 +119,7 @@ void pint_push(binary_tree_t *node, levelorder_queue_t *head,
 void pop(levelorder_queue_t **head);
 void push(binary_tree_t *node, levelorder_queue_t *head,
 	  levelorder_queue_t **tail);
+int is_avl_helper(const binary_tree_t *tree, int lo, int hi);
 
 /* Macro to return the maximum of two values */
 #define MAX(a, b) (((a) > (b)) ? (a) : (b))
