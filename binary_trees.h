@@ -32,6 +32,17 @@ typedef struct binary_tree_s avl_t;
 /* Max Binary Heap */
 typedef struct binary_tree_s heap_t;
 
+/**
+ *  * struct levelorder_queue_s - Level order traversal queue.
+ *   * @node: A node of a binary tree.
+ *    * @next: The next node to traverse to in the binary tree.
+ */
+typedef struct levelorder_queue_s
+{
+	binary_tree_t *node;
+	struct levelorder_queue_s *next;
+} levelorder_queue_t;
+
 
 binary_tree_t *binary_tree_node(binary_tree_t *parent, int value);
 void binary_tree_print(const binary_tree_t *);
@@ -96,6 +107,18 @@ void heapify(heap_t *root);
 int heap_extract(heap_t **root);
 size_t tree_size(const binary_tree_t *tree);
 int *heap_to_sorted_array(heap_t *heap, size_t *size);
+unsigned char is_leaf(const binary_tree_t *node);
+size_t depth(const binary_tree_t *tree);
+const binary_tree_t *get_leaf(const binary_tree_t *tree);
+int is_perfect_recursive(const binary_tree_t *tree,
+		         size_t leaf_depth, size_t level);
+levelorder_queue_t *create_node(binary_tree_t *node);
+void free_queue(levelorder_queue_t *head);
+void pint_push(binary_tree_t *node, levelorder_queue_t *head,
+	       levelorder_queue_t **tail, void (*func)(int));
+void pop(levelorder_queue_t **head);
+void push(binary_tree_t *node, levelorder_queue_t *head,
+	  levelorder_queue_t **tail);
 
 /* Macro to return the maximum of two values */
 #define MAX(a, b) (((a) > (b)) ? (a) : (b))
