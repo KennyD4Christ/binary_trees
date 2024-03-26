@@ -21,7 +21,6 @@ int binary_tree_is_avl(const binary_tree_t *tree)
 	int balance = abs(left_height - right_height);
 
 
-      	/* Check for both overall balance and subtree balance */
 	if (balance > 1 || (!binary_tree_is_avl(tree->left) && balance > 0) ||
 	    (!binary_tree_is_avl(tree->right) && balance > 0))
 
