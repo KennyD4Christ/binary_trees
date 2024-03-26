@@ -1,6 +1,4 @@
 #include "binary_trees.h"
-#include "queue.c"
-#include "queue.h"
 #include "102-binary_tree_is_complete.c"
 
 /**
